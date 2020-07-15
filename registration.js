@@ -17,6 +17,8 @@ function getData(){
                 },
                 success: function(data){
                     console.log(data)
+                    alert('пользователь успешно зарегистрирован')
+                    location="http://forum/";
                 },
                 error: function(thrownError) {console.log(thrownError)}
             });
@@ -28,7 +30,6 @@ function getData(){
         else{
             alert('пароли не совпадают');
         }
-        
     }
     else{
         alert('поля email и password должны быть заполнены');
