@@ -25,3 +25,19 @@ function signIn(){
         error: function(thrownError) {console.log('ошибка')}
     });
 }
+
+function logout (){
+    localStorage.removeItem('number');
+    location="http://forum/";
+}
+
+function button(){
+    if(localStorage.getItem('number') == null){
+        return document.querySelector('#logout').style.display ='none';
+    }
+    else{
+        return document.querySelector('#login').style.display ='none';
+    }
+    
+}
+button();
