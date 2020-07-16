@@ -21,14 +21,33 @@
     <button onclick='addCommit()' type="button" class="btn btn-primary btn-lg btn-block">Оставить комментарий</button>
   </form>
   <?require 'getPost.php';?>
+  <?require 'selectComment.php';?>
   <div class='mt-5'>
     <?php
       foreach($getPost as $item) : ?>
-        <div class='border p-2 m-2 ml-5 mr-5'><? echo  $item['commits'] ?></div>
+        <div class='border p-2 m-2 ml-5 mr-5' id='post' data-id='<?echo $item['id'] ?>'><? echo  $item['commits'] ?></div>
+        <div class='d-flex justify-content-end mr-5'>
+        <input id='reply_to_commit' type="text">
+        <input  type="button" id='btn'  value='ответить'>
+        </div>
+
+        <?php
+          foreach($result as $items) : ?>
+          <div>
+            <?php
+              if($item['id'] == $items['id_table']){
+                echo $items['value_commit'];
+              } 
+              
+            ?>
+          </div>
+        <?php endforeach ?>
+
     <?php endforeach ?>
   </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src='getcommit.js'></script>
 <script src='sigIn.js'></script>
+<script src='getId.js'></script>
 </body>
 </html>
