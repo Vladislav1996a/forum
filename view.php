@@ -28,7 +28,7 @@
         <div class='border p-2 m-2 ml-5 mr-5' id='post' data-id='<?echo $item['id'] ?>'><? echo  $item['commits'] ?></div>
         <div class='d-flex justify-content-end mr-5'>
         <input id='reply_to_commit' type="text">
-        <input  type="button" id='btn'  value='ответить'>
+        <input  type="button" id='btn' onclick='getId()' value='ответить'>
         </div>
 
         <?php
